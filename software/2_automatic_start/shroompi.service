@@ -1,0 +1,14 @@
+[Unit]
+Description=Shroompi
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 -m shroompi
+WorkingDirectory=/home/pi/
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,12 @@
+using shroompi service:
+
+1) transfer to raspberry pi with scp or some other way.
+2) sudo copy to '/lib/systemd/system/shroompi.service'
+3) sudo chmod 644 the file
+4) sudo systemctl daemon-reload to discover the new service
+5) sudo systemctl start shroompi.service    to test if can be started.
+6) sudo systemctl stop shroompi.service    to stop
+7) sudo systemctl enable shroompi.service    to start on boot.
+
+
+

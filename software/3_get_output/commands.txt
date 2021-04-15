@@ -1,0 +1,6 @@
+moving files from pi to pc with rsync:
+
+1) MOVE images
+rsync -av --remove-source-files -e "ssh" pi@192.168.1.100:output/images/ ~/output/images/
+2) COPY rest
+rsync -av -e "ssh" pi@192.168.1.100:output/ ~/output/
