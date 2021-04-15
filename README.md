@@ -12,9 +12,15 @@ Disclaimer. This can be any kind of mushrooms. If you choose to use this to grow
 
 Fungi grow in roughly two phases that concern us: the incubation phase and the fruiting phase.
 
-* During the incubation phase, a substrate (food) with some added spores is placed in a dark and warm environment. At the end of this phase, the fungus has completely "colonized" the substrate, which is then completely wrapped in fibre-/moss-like mycelium. The incubator is a styrofoam box with an electric heater.
+* During the incubation phase, a substrate (food) with some added spores is placed in a dark and warm environment. At the end of this phase, the fungus has completely "colonized" the substrate, which is then completely wrapped in fibre-/moss-like mycelium. The incubator is a styrofoam box with an electric heater:
 
-* During the fruiting phase, the mycelium-wrapped substrate is placed in a humid environment. This causes the actual mushrooms (the "fruiting bodies") to grow for us to harvest and eat. The fruiting chamber is a closed (semi-)transparent plastic tub with wet towels, with 2 attached fans to force air exchange.
+  ![](hardware/incubator/4_cutting.png) | ![](hardware/incubator/5_finished.png)
+  :--:|:--:
+
+* During the fruiting phase, the mycelium-wrapped substrate is placed in a humid environment. This causes the actual mushrooms (the "fruiting bodies") to grow for us to harvest and eat. The fruiting chamber is a closed (semi-)transparent plastic tub with wet towels, with 2 attached fans to force air exchange:
+
+  ![](hardware/fruiting_chamber/2_finished_inside.png) | ![](hardware/fruiting_chamber/3_in_use.png)
+  :--:|:--:
 
 ### Pi tasks
 
@@ -54,6 +60,15 @@ Here's some pictures of the assembled system:
 
 # Schematics
 
+
+### Electrics
+
+A wooden base plate is used for the base, and the Pi is screwed onto it, as well as a power strip. The power strip holds the various power bricks. One separate outlet is also used; this one is for the electric heater and controlled by the solid-state relay - the wiring is shown below.
+
+![](hardware/electrics1.jpg) | ![](hardware/electrics2.jpg) | ![](hardware/electrics3.jpg) | ![](hardware/electrics4.jpg)
+:--:|:--:|:--:|:--:
+
+
 ### Power and control
 
 There are quite a few voltage levels needed; in my case 24 V DC for the LED strip, 12 V DC for the fans, and 5 V DC for the Pi itself. They are supplied with various power bricks (AC/DC converters) off the mains, and share a common negative voltage (ground). As I might use 12 V DC LED strips in the future, I've added the possibility for a jumper to bridge the two and use only one source to power both.
@@ -76,6 +91,10 @@ The DHT22 and MH-Z19C require power (5V). The DHT22 requires one arbitrary GPIO 
 ### Button
 
 I also added a button that is used to toggle the display's backlighting. It's read by the Pi and doesn't directly connect to the display.
+
+### Cameras
+
+The Raspberry Pi Camera Module is attached to a 1-meter-long ribbon cable, and the DSLR camera is attached to both the USB port and its dedicated power brick.
 
 ### Summary: Pins
 
@@ -106,17 +125,7 @@ empty hat             |  with components
 
 
 
-### Other Hardware
 
-A wooden base plate is used, and the Pi is screwed onto it, as well as a power strip. The power strip holds the various power bricks. One separate outlet is also used; this one is for the electric heater and controlled by the solid-state relay - the wiring is shown below.
-
-a | b  | c | d
-:--:|:--:|:--:|:--:
-![](hardware/electrics1.jpg) | ![](hardware/electrics2.jpg) | ![](hardware/electrics3.jpg) | ![](hardware/electrics4.jpg)
-
-
-
-The Raspberry Pi Camera Module is attached to a 1-meter-long ribbon cable, and the DSLR camera is attached to both the USB port and its dedicated power brick.
 
 # Software
 
