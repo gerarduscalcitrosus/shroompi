@@ -54,9 +54,9 @@ Not drawn but also included:
 
 * An LCD display (20x4) is connected to show measurement values and log messages.
 
-Here's some pictures of the assembled system:
+Here's a picture of the assembled system:
 
-<div style="width:100; height:200px; background-color:yellow"></div>
+![system overview](hardware/system/2_withannotations.png)
 
 # Schematics
 
@@ -210,6 +210,7 @@ A few tips/remarks if you're using a USB-connected camera:
 * Many settings can be put in the script's configuration (in `__main__.py`), but it's easier to set values that should not change (whitebalance, image size, etc) on the camera.
 * For settings that *do* need to be set through the script (e.g., if you want to take 2 photos using distinct apertures) - make sure the camera is able to accept them (in this example, it should be in A or M mode).
 * I've had some problems shooting in Raw+Jpg and decided to shoot only in jpg. I've also had problems with my D5100 (it would only take a single photo before throwing an error), but as my D5600 didn't cause problems I did not investigate further. Your mileage may vary.
+* I've also had a very sporadic error when shooting with an SD card in the camera. Removing it resolved that issue.
 * The shooting is handled by `gphoto2` ([link](https://github.com/jim-easterbrook/python-gphoto2)). The settings that can be changed, and the values that are accepted, depend on the camera model, current shooting mode, and attached lens. I added a debug attributes `.debug_listcompleteconfig` and `.debug_findsetting` to the `Cam` class in the `usbcam.py` script - inspect / run this file to check them out. Samle usage:
   ```
   c = Cam()
@@ -229,6 +230,7 @@ A few tips/remarks if you're using a USB-connected camera:
            Off (On, Off)
   ...
   ```
+
 
 ### Autostart
 
